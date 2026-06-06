@@ -360,7 +360,7 @@ func main() {
 		case 6:
 			printData(data, n)
 		case 7:
-			fmt.Print("Masukkan kode barang yang dicari: ")
+			fmt.Print("Masukkan Nama barang yang dicari: ")
 			fmt.Scan(&x)
 			idx = sequentialSearch(data, n, x)
 			if idx != -1 {
@@ -381,10 +381,10 @@ func main() {
 			}
 		case 9:
 			selectionSort(&data, n)
-			fmt.Println("Data berhasil diurutkan menggunakan Selection Sort")
+			fmt.Println("Data berhasil diurutkan dari yang terkecil")
 		case 10:
 			insertionSort(&data, n)
-			fmt.Println("Data berhasil diurutkan menggunakan Insertion Sort")
+			fmt.Println("Data berhasil diurutkan dari yang terbesar")
 		case 11:
 			statistikGudang(data, n)
 		case 12:
