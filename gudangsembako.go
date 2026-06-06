@@ -56,7 +56,7 @@ func tambahBarang(data *tabBarang, n *int) {
 			fmt.Print("Masukkan Harga Barang: ")
 			fmt.Scan(&data[*n].harga)
 		}
-		*n++
+		*n = *n + 1
 
 		fmt.Println("Data Berhasil Ditambahkan!")
 	}
@@ -77,7 +77,7 @@ func ubahBarang(data *tabBarang, n int) {
 		if data[i].kode == x {
 			found = true
 		} else {
-			i++
+			i = i + 1
 		}
 	}
 
@@ -114,7 +114,7 @@ func hapusBarang(data *tabBarang, n *int) {
 		if data[i].kode == x {
 			found = true
 		} else {
-			i++
+			i = i + 1
 		}
 	}
 
@@ -122,7 +122,7 @@ func hapusBarang(data *tabBarang, n *int) {
 		for j = i; j < *n-1; j++ {
 			data[j] = data[j+1]
 		}
-		*n--
+		*n = *n - 1
 		fmt.Println("Data Berhasil Dihapus!")
 	} else {
 		fmt.Println("Data Tidak Ditemukan!")
@@ -144,7 +144,7 @@ func transaksiMasuk(data *tabBarang, n int) {
 		if data[i].kode == x {
 			found = true
 		} else {
-			i++
+			i = i + 1
 		}
 	}
 
@@ -175,7 +175,7 @@ func transaksiKeluar(data *tabBarang, n int) {
 		if data[i].kode == x {
 			found = true
 		} else {
-			i++
+			i = i + 1
 		}
 	}
 
@@ -243,17 +243,17 @@ func binarySearch(data tabBarang, n int, x string) int{
 }
 
 func selectionSort(data *tabBarang, n int) {
-	var i, j, idxMin int
+	var i, pass, idxMin int
 	var temp barang
 
 	for i = 0; i < n-1; i++ {
 
 		idxMin = i
 
-		for j = i + 1; j < n; j++ {
+		for pass = i + 1; pass < n; pass++ {
 
-			if data[j].kode < data[idxMin].kode {
-				idxMin = j
+			if data[pass].kode < data[idxMin].kode {
+				idxMin = pass
 			}
 		}
 
@@ -264,21 +264,22 @@ func selectionSort(data *tabBarang, n int) {
 }
 
 func insertionSort(data *tabBarang, n int) {
-	var i, j int
+	var pass, i int
 	var temp barang
 
-	for i = 1; i < n; i++ {
+	pass = 1
 
-		temp = data[i]
-		j = i - 1
+	for pass <= n-1 {
+		i = pass
+		temp = data[pass]
 
-		for j >= 0 && temp.stok > data[j].stok {
-
-			data[j+1] = data[j]
-			j--
+		for i > 0 && temp.stok > data[i-1].stok {
+			data[i] = data[i-1]
+			i = i - 1
 		}
 
-		data[j+1] = temp
+		data[i] = temp
+		pass = pass + 1
 	}
 }
 
