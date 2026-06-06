@@ -364,7 +364,7 @@ func main() {
 			fmt.Scan(&x)
 			idx = sequentialSearch(data, n, x)
 			if idx != -1 {
-				fmt.Println("Barang ditemukan pada index", idx)
+				fmt.Println("Barang ditemukan pada urutan ke ", idx)
 				fmt.Println("Nama Barang :", data[idx].nama)
 			} else {
 				fmt.Println("Barang tidak ditemukan")
@@ -374,7 +374,7 @@ func main() {
 			fmt.Scan(&x)
 			idx = binarySearch(data, n, x)
 			if idx != -1 {
-				fmt.Println("Barang ditemukan pada index", idx)
+				fmt.Println("Barang ditemukan pada urutan ke ", idx)
 				fmt.Println("Nama Barang :", data[idx].nama)
 			} else {
 				fmt.Println("Barang tidak ditemukan")
