@@ -216,7 +216,7 @@ func sequentialSearch(data tabBarang, n int, x string) int{
 	var i int
 
 	for i=0; i<n; i++{
-		if data[i].kode == x{
+		if data[i].nama == x{
 			return i
 		}
 	}
@@ -272,7 +272,7 @@ func insertionSort(data *tabBarang, n int) {
 		temp = data[i]
 		j = i - 1
 
-		for j >= 0 && temp.stok < data[j].stok {
+		for j >= 0 && temp.stok > data[j].stok {
 
 			data[j+1] = data[j]
 			j--
@@ -335,10 +335,10 @@ func main() {
 		fmt.Println("4. Transaksi Barang Masuk")
 		fmt.Println("5. Transaksi Barang Keluar")
 		fmt.Println("6. Tampilkan Data Barang")
-		fmt.Println("7. Sequential Search")
-		fmt.Println("8. Binary Search")
-		fmt.Println("9. Selection Sort")
-		fmt.Println("10. Insertion Sort")
+		fmt.Println("7. Cek Menggunakan Nama Barang")
+		fmt.Println("8. Cek Menggunakan Kode Barang")
+		fmt.Println("9. Mengurutkan Stok Dari Terkecil")
+		fmt.Println("10. Mengurutkan Stok Dari Terbesar")
 		fmt.Println("11. Statistik Gudang")
 		fmt.Println("12. Keluar")
 		fmt.Print("Pilih menu: ")
